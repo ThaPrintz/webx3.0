@@ -1,0 +1,52 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:webX3._0.Pages" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:Controls="clr-namespace:webX3._0.Controls" x:Class="webX3._0.Pages.Console"
+             mc:Ignorable="d"
+             Height="550" Width="635">
+    <Grid Height="550">
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+            <Grid Height="550">
+                <Label FontFamily="Cooper Black" Foreground="#FF2C2C2C" FontSize="48" Content="Console Log Archive" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+                <DatePicker Width="100" materialDesign:HintAssist.Hint="Pick Date" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="65,68,470,445" Foreground="#FF00A9DA" BorderBrush="#FF00A9DA" />
+
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Background="{x:Null}" Height="35" Margin="25,115,0,10">
+                    <Button.Foreground>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFAC5CF0"/>
+                            <GradientStop Color="#FF5D00FF" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Button.Foreground>
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFAF7EE0" Offset="0.164"/>
+                            <GradientStop Color="#FF5D00FF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+
+                    <StackPanel HorizontalAlignment="Left" Height="35" Width="146">
+                        <materialDesign:PackIcon Kind="FileUploadOutline" Height="30" Width="44" Margin="-8,-2,0,0"/>
+                        <TextBlock Text="Open log" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-15,-32,0,0" FontFamily="Leelawadee UI" Foreground="#DD597BEE" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+
+                <ScrollViewer HorizontalAlignment="Left" Height="375" Margin="270,115,0,0" VerticalAlignment="Top" Width="300" Background="Black" CanContentScroll="True">
+                    <ScrollViewer.Effect>
+                        <DropShadowEffect/>
+                    </ScrollViewer.Effect>
+
+
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="375" Width="283">
+                        <Controls:LogEntry/>
+                    </StackPanel>
+                </ScrollViewer>
+                <TextBlock Foreground="#FF00A9DA" HorizontalAlignment="Center" Margin="333,68,128,0" TextWrapping="Wrap" Text="Recent log dumps" VerticalAlignment="Top" Height="30" Width="174" FontFamily="Leelawadee UI" FontSize="20" FontWeight="Bold"/>
+            </Grid>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

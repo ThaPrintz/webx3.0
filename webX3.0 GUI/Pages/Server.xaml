@@ -1,0 +1,206 @@
+﻿<UserControl x:Class="webX3._0.Pages.Server"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:webX3._0.Pages"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Height="550" Width="635">
+    <Grid Height="550">
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+            <Grid Height="550">
+                <Grid VerticalAlignment="Top" Height="195">
+                    <Label FontFamily="Cooper Black" Foreground="#FF2C2C2C" FontSize="48" Content="Server Control" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+                    <materialDesign:Card Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Width="250" Padding="8" HorizontalAlignment="Center" Opacity="0.8" Margin="0,0,0,0" Height="55">
+                        <materialDesign:Card.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF373737" Offset="0.143"/>
+                                <GradientStop Color="#FF585858" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:Card.Background>
+                        <StackPanel>
+                            <Grid >
+                                <materialDesign:PackIcon Kind="ServerNetwork" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock Text="Server Status" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5 0 60 0" FontFamily="Sitka Text"/>
+
+                                <TextBlock x:Name="sv_status" Text="OFFLINE" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" FontFamily="Leelawadee UI" Foreground="IndianRed" FontWeight="Bold"/>
+                            </Grid>
+                        </StackPanel>
+                    </materialDesign:Card>
+
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="146" Background="{x:Null}" Height="35" Margin="25,0,0,10" Click="StartWebSv">
+                        <Button.Foreground>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FFAC5CF0"/>
+                                <GradientStop Color="#FF5D00FF" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Button.Foreground>
+                        <Button.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="#FFAF7EE0" Offset="0.164"/>
+                                <GradientStop Color="#FF5D00FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.BorderBrush>
+
+                        <StackPanel>
+                            <materialDesign:PackIcon Kind="PowerOn" Height="30" Width="51" Margin="-15,0,0,0"/>
+                            <TextBlock Text="Start server" FontSize="14" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="25,-32,5,0" FontFamily="Leelawadee UI" Foreground="#DD597BEE" FontWeight="Bold">
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+
+                    <Button HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="146" Background="{x:Null}" Height="35" Margin="0,0,0,10">
+                        <Button.Foreground>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FFAC5CF0"/>
+                                <GradientStop Color="#FF5D00FF" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Button.Foreground>
+                        <Button.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB880F1" Offset="0.092"/>
+                                <GradientStop Color="#FF5D00FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.BorderBrush>
+
+                        <StackPanel Width="120">
+                            <materialDesign:PackIcon Kind="PowerOff" Height="30" Width="51" Margin="-10,0,0,0"/>
+                            <TextBlock Text="Stop server" FontSize="14" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,-32,5,0" FontFamily="Leelawadee UI" Foreground="#DD597BEE" Width="80" FontWeight="Bold">
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+
+                    <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="146" Background="{x:Null}" Height="35" Margin="0,0,25,10" Click="LoadWebxFunc">
+                        <Button.Foreground>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FFAC5CF0"/>
+                                <GradientStop Color="#FF5D00FF" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Button.Foreground>
+                        <Button.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFBB89EE" Offset="0.118"/>
+                                <GradientStop Color="#FF5D00FF" Offset="0.815"/>
+                                <GradientStop Color="#FFB07AEF" Offset="0.218"/>
+                                <GradientStop Color="#FF8B43F6" Offset="0.521"/>
+                            </LinearGradientBrush>
+                        </Button.BorderBrush>
+
+                        <StackPanel Width="120">
+                            <materialDesign:PackIcon Kind="Restart" Height="30" Width="51" Margin="-12,0,0,0"/>
+                            <TextBlock Text="Restart server" FontSize="13" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,-32,2,0" FontFamily="Leelawadee UI" Foreground="#DD597BEE" Width="89" FontWeight="Bold">
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+
+                <Grid VerticalAlignment="Center" Height="270" Margin="0,195,0,85">
+                    <Label FontFamily="Cooper Black" Foreground="#FF2C2C2C" FontSize="48" Content="Networking" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+                    <materialDesign:Card Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Width="250" Padding="8" HorizontalAlignment="Left" Opacity="0.8" Margin="35,-55,0,0" Height="55">
+                        <materialDesign:Card.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF373737" Offset="0.143"/>
+                                <GradientStop Color="#FF585858" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:Card.Background>
+                        <StackPanel>
+                            <Grid >
+                                <materialDesign:PackIcon Kind="IpNetwork" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock Text="Server IP" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,90,0" FontFamily="Sitka Text"/>
+
+                                <TextBlock Text="127.0.0.1" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" FontFamily="Sitka Text" Foreground="SpringGreen"/>
+                            </Grid>
+                        </StackPanel>
+                    </materialDesign:Card>
+
+                    <materialDesign:Card Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Width="250" Padding="8" HorizontalAlignment="Left" Opacity="0.8" Margin="35,65,0,0" Height="55">
+                        <materialDesign:Card.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF373737" Offset="0.143"/>
+                                <GradientStop Color="#FF585858" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:Card.Background>
+                        <StackPanel>
+                            <Grid >
+                                <materialDesign:PackIcon Kind="Webpack" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,4,0,-4"/>
+                                <TextBlock Text="Websockets" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="35,9,106,0" FontFamily="Sitka Text"/>
+
+                                <materialDesign:PackIcon Kind="CheckboxMultipleMarked" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center" RenderTransformOrigin="0.3,0.7" Margin="0,4,10,-4" Foreground="SpringGreen"/>
+                            </Grid>
+                        </StackPanel>
+                    </materialDesign:Card>
+
+                    <materialDesign:Card Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Width="250" Padding="8" HorizontalAlignment="Left" Opacity="0.8" Margin="35,190,0,0" Height="55">
+                        <materialDesign:Card.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF373737" Offset="0.143"/>
+                                <GradientStop Color="#FF585858" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:Card.Background>
+                        <StackPanel>
+                            <Grid >
+                                <materialDesign:PackIcon Kind="Webhook" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,4,0,-4"/>
+                                <TextBlock Text="Webhooks" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="35,9,117,-2" FontFamily="Sitka Text"/>
+
+                                <materialDesign:PackIcon Kind="CheckboxMultipleMarked" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center" RenderTransformOrigin="0.3,0.7" Margin="0,4,10,-4" Foreground="SpringGreen"/>
+                            </Grid>
+                        </StackPanel>
+                    </materialDesign:Card>
+
+                    <materialDesign:Card Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Width="250" Padding="8" HorizontalAlignment="Right" Opacity="0.8" Margin="0,-55,35,0" Height="55">
+                        <materialDesign:Card.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF373737" Offset="0.143"/>
+                                <GradientStop Color="#FF585858" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:Card.Background>
+                        <StackPanel>
+                            <Grid >
+                                <materialDesign:PackIcon Kind="MidiPort" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock Text="HTTP Port" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,45,0" FontFamily="Sitka Text"/>
+
+                                <TextBlock Text="80" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" FontFamily="Sitka Text" Foreground="SpringGreen"/>
+                            </Grid>
+                        </StackPanel>
+                    </materialDesign:Card>
+
+                    <materialDesign:Card Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Width="250" Padding="8" HorizontalAlignment="Right" Opacity="0.8" Margin="0,65,35,0" Height="55">
+                        <materialDesign:Card.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF373737" Offset="0.143"/>
+                                <GradientStop Color="#FF585858" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:Card.Background>
+                        <StackPanel>
+                            <Grid >
+                                <materialDesign:PackIcon Kind="MidiPort" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock Text="HTTPS Port" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,45,0" FontFamily="Sitka Text"/>
+
+                                <TextBlock Text="443" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" FontFamily="Sitka Text" Foreground="SpringGreen"/>
+                            </Grid>
+                        </StackPanel>
+                    </materialDesign:Card>
+
+                    <materialDesign:Card Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Width="250" Padding="8" HorizontalAlignment="Right" Opacity="0.8" Margin="0,190,35,0" Height="55">
+                        <materialDesign:Card.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF373737" Offset="0.143"/>
+                                <GradientStop Color="#FF585858" Offset="1"/>
+                            </LinearGradientBrush>
+                        </materialDesign:Card.Background>
+                        <StackPanel>
+                            <Grid >
+                                <materialDesign:PackIcon Kind="ScriptTextOutline" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock Text="webxcore library" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="25,5,45,0" FontFamily="Sitka Text"/>
+
+                                <materialDesign:PackIcon x:Name="webx_check" Kind="CheckboxMultipleMarked" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center" RenderTransformOrigin="0.3,0.7" Margin="0,4,10,-4" Foreground="SpringGreen"/>
+                            </Grid>
+                        </StackPanel>
+                    </materialDesign:Card>
+                </Grid>
+            </Grid>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>
