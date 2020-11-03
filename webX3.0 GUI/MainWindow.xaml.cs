@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using webX3._0.Controls;
+using webX3._0.Pages;
 
 namespace webX3._0
 {
@@ -23,7 +24,7 @@ namespace webX3._0
     {
         public MainWindow() => InitializeComponent();
 
-        public static ServerConsole Svcon;
+        public static ServerConsole Svcon = new ServerConsole();
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -37,7 +38,6 @@ namespace webX3._0
 
         private void Con_click(object sender, RoutedEventArgs e)
         {
-            Svcon = new ServerConsole();
             Svcon.Show();
         }
 
@@ -59,15 +59,18 @@ namespace webX3._0
                     GridPrincipal.Children.Add(new Pages.Server());
                     break;
                 case 1:
-                   GridPrincipal.Children.Clear();
-                   GridPrincipal.Children.Add(new Pages.Settings());
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Pages.Settings());
                     break;
                 case 2:
-                   GridPrincipal.Children.Clear();
-
-                    Pages.Console conpage       = new Pages.Console();
-
-                    GridPrincipal.Children.Add(conpage);
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Pages.Console());
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Pages.AboutWebxlib());
                     break;
                 default:
                     break;

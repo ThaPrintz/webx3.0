@@ -1,6 +1,6 @@
 #include "RequestHandler.h"
 
-static void* _DEFAULT(void* arg, void* argp)
+void* _DEFAULTH(void* arg, void* argp)
 {
 	webxlib* sv = (webxlib*)arg;
 	cl_data* cl = (cl_data*)argp;

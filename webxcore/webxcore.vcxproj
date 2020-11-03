@@ -172,13 +172,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="RequestHandler.h" />
-    <ClInclude Include="webserver.h" />
     <ClInclude Include="webxcore.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="RequestHandler.cpp" />
-    <ClCompile Include="webserver.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

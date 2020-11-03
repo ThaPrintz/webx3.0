@@ -12,6 +12,8 @@
 
 //HTTP framework that powers webx
 #include "webxlib.h"
+//local headers
+#include "RequestHandler.h"
 
 typedef struct client_data
 {
@@ -19,17 +21,35 @@ typedef struct client_data
 	std::map<std::string, std::string> request_headers;
 } cl_data;
 
-typedef struct WEBXCORE_API WEBXCORE
+class HTTPServer
+{
+public:
+	HTTPServer(std::string cert_file, std::string xkey_file);
+
+	void Start();
+	void Stop();
+protected:
+	bool securelayer = false;
+	bool svon = false;
+
+	std::string certificate_file;
+	std::string key_file;
+
+	csockdata http_data;
+	csockdata https_data;
+
+	webxlib::csocket* httpsv = nullptr;
+	webxlib::csocket* httpssv = nullptr;
+};
+
+typedef struct WEBXCOREIF
 {
 	webxlib* sv_interface			= nullptr;
 	webxlib::webhook* web_interface = nullptr;
 	HTTPServer* webxserver			= nullptr;
-};
+} WEBXCOREIF;
 
 void WEBXCORE_API StartWebServer();
-
-//local headers
-#include "webserver.h"
-#include "RequestHandler.h"
+void WEBXCORE_API StopWebServer();
 
 #endif //WEBXCORE_H

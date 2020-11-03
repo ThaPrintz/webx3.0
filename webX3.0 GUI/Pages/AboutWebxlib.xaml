@@ -10,7 +10,22 @@
     <Grid Height="550" Width="635">
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
             <Grid Height="550" Width="635">
-                
+                <Label Content="About webxlib" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" Height="67" Width="257" FontSize="36" FontFamily="Leelawadee UI" FontWeight="Bold" TextOptions.TextHintingMode="Animated"/>
+                <materialDesign:PackIcon Kind="About" HorizontalAlignment="Left" Margin="138,5,0,0" VerticalAlignment="Top" Height="52" Width="56"/>
+
+                <ScrollViewer HorizontalAlignment="Left" Height="475" Margin="10,65,0,0" VerticalAlignment="Top" Width="615" CanContentScroll="True" Foreground="#FF212121">
+                    <StackPanel Height="475" Width="596" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Label Content="What is webxlib?" Height="45" Width="187" FontFamily="Leelawadee UI" Background="#00000000" FontSize="24"/>
+                        <TextBlock TextWrapping="Wrap" Text="webxlib is a C/C++ HTTP Framework written in full by Skyler Nelson (aka Printz). Originally developed for educational purposes, webxlib now serves as the library used to develop 'webx3.0', an API web server utilized solely to host my interactive online programming portfolio" Height="107" FontFamily="Leelawadee UI Semilight" FontSize="18"/>
+
+                        <Label Content="What does webxlib have to offer?" Height="45" FontFamily="Leelawadee UI" Background="#00000000" FontSize="24" Margin="0" HorizontalAlignment="Center"/>
+                        <TextBlock TextWrapping="Wrap" Text="webxlib offers an easy-to-use yet effective wrapper of Microsoft's Berkley's sockets library - Winsock. webxlib::csocket has TCP/UDP, IPv4/IPv6, and SSL functionality as well as the option to set certain socket flags - such as non-blocking sockets. webxlib also contains a webhooking class, webxlib::webhook, which allows for very simple dynamic content generation. Although webxlib comes with a default static web serving callback, the webhooking interface allows for you to handle any HTTP client request however you'd like. You'll also find that webxlib offers a few utility functions to help with HTTP request parsing, HTTP response building, file loading/save, etc." Height="242" FontFamily="Leelawadee UI Semilight" FontSize="18"/>
+
+                        <Label Content="How do I use webxlib?" Height="45" FontFamily="Leelawadee UI" Background="#00000000" FontSize="24" Margin="0" HorizontalAlignment="Center"/>
+                        <TextBlock TextWrapping="Wrap" Text="webxlib is a static library written in C/C++, and webxlib.lib can be linked to your project in solution settings (or #pragma). As webxlib is open source, you can also compile it as a Dynamically Linked Library and with an addition of just a few lines of code you can export the neccessary classes. The goal of webxlib is 'ease of use'. webxlib is very friendly to the new C++ programmer." Height="160" FontFamily="Leelawadee UI Semilight" FontSize="18"/>
+
+                    </StackPanel>
+                </ScrollViewer>
             </Grid>
         </materialDesign:TransitioningContent>
     </Grid>

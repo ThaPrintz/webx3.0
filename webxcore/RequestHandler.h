@@ -24,8 +24,8 @@ typedef struct WEBSOCK_packet
 	std::string connection;
 	std::string secwsaccept;
 	std::string secwsproto;
-};
+} WEBSOCK_packet;
 
-static void* _DEFAULT(void* arg, void* argp);
+void* _DEFAULTH(void* arg, void* argp);
 
 #endif //REQHANDLER_H
