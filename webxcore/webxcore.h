@@ -14,6 +14,9 @@
 #include "webxlib.h"
 //local headers
 #include "RequestHandler.h"
+#include "InternalDataTransit.h"
+
+int csprint(std::string msg);
 
 typedef struct client_data
 {
@@ -25,6 +28,7 @@ class HTTPServer
 {
 public:
 	HTTPServer(std::string cert_file, std::string xkey_file);
+	virtual ~HTTPServer();
 
 	void Start();
 	void Stop();
@@ -49,7 +53,9 @@ typedef struct WEBXCOREIF
 	HTTPServer* webxserver			= nullptr;
 } WEBXCOREIF;
 
-void WEBXCORE_API StartWebServer();
-void WEBXCORE_API StopWebServer();
-
+extern "C"
+{
+	WEBXCORE_API void StartWebServer();
+	WEBXCORE_API void StopWebServer();
+}
 #endif //WEBXCORE_H

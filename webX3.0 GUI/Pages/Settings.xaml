@@ -38,6 +38,9 @@
 
                 <ToggleButton Style="{StaticResource MaterialDesignSwitchDarkToggleButton}" ToolTip="Web caching" IsChecked="True" Margin="10,376,580,133" Height="41" Foreground="#FFC5D800" Background="#FFC5D800" BorderBrush="#FFF93F3F"/>
                 <TextBlock HorizontalAlignment="Left" Margin="60,387,0,0" TextWrapping="Wrap" Text="Web caching" VerticalAlignment="Top" Height="30" Width="210" Foreground="#FFC5D800" FontFamily="Leelawadee UI" FontWeight="Bold" FontSize="14"/>
+
+                <ToggleButton Style="{StaticResource MaterialDesignSwitchDarkToggleButton}" ToolTip="Cookies" IsChecked="True" Margin="10,417,580,92" Height="41" Foreground="#FFC5D800" Background="#FFC5D800" BorderBrush="#FFF93F3F"/>
+                <TextBlock HorizontalAlignment="Left" Margin="60,428,0,0" TextWrapping="Wrap" Text="Cookies" VerticalAlignment="Top" Height="30" Width="210" Foreground="#FFC5D800" FontFamily="Leelawadee UI" FontWeight="Bold" FontSize="14"/>
             </Grid>
         </materialDesign:TransitioningContent>
     </Grid>

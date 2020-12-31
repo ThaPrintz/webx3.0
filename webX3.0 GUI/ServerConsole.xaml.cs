@@ -22,7 +22,19 @@ namespace webX3._0
     {
         public ServerConsole() => InitializeComponent();
 
-        public void Cprintf(string std)
+        private void Gmd(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Pbconclick(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Svcon.Hide();
+
+            MainWindow._active = false;
+        }
+
+        public void Cprintf(String std)
         {
             ConsoleMsg cmsg = new ConsoleMsg();
             cmsg.Msgg.Text = std;

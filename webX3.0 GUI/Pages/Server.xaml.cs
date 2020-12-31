@@ -20,7 +20,16 @@ namespace webX3._0.Pages
     /// </summary>
     public partial class Server : UserControl
     {
-        public Server() => InitializeComponent();
+        public Server()
+        {
+            InitializeComponent();
+
+            if (MainWindow._online)
+            {
+                sv_status.Text = "ONLINE";
+                sv_status.Foreground = Brushes.SpringGreen;
+            }
+        }
 
         public void LoadWebxFunc(object sender, RoutedEventArgs e)
         {
@@ -33,6 +42,20 @@ namespace webX3._0.Pages
 
             sv_status.Text = "ONLINE";
             sv_status.Foreground = Brushes.SpringGreen;
+
+            webxcore.StartWebx3();
+
+            MainWindow._online = true;
+        }
+
+        public void StopWebSv(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Svcon.Cprintf("Server stopped");
+
+            sv_status.Text = "OFFLINE";
+            sv_status.Foreground = Brushes.IndianRed;
+
+            webxcore.StopWebx3();
         }
     }
 }

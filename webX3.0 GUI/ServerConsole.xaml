@@ -7,17 +7,22 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:Controls="clr-namespace:webX3._0.Controls" x:Class="webX3._0.ServerConsole"
         mc:Ignorable="d"
-        Title="webx3.0 Server Console" Height="514.319" Width="900" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="#FF00A9DA">
-    <StackPanel Width="900" Margin="0,0,-8,2">
-        <TextBlock HorizontalAlignment="Center" Margin="0,-3,0,0" TextWrapping="Wrap" Text="webx3.0 Server Console" VerticalAlignment="Top" FontSize="14" FontFamily="Consolas" FontWeight="Bold"/>
+        Title="webx3.0 Server Console" Height="513.411" Width="912.7" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="Black" BorderThickness="0" ResizeMode="NoResize">
+    <StackPanel Width="Auto">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="912" Height="15" Background="#FF292727" MouseDown="Gmd">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="webx3.0 Server Console" VerticalAlignment="Top" FontSize="14" FontFamily="Consolas" FontWeight="Bold" Height="19" Width="176" Foreground="White" Margin="10,0,0,0"/>
+            <Button x:Name="PowerButton" HorizontalAlignment="Right" Width="18" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Black" Click="Pbconclick" Margin="0,-5,0,0">
+                <materialDesign:PackIcon Kind="Power" Foreground="#FF3AFF55" Width="15" Height="15" Cursor="Hand"/>
+            </Button>
+        </Grid>
 
-        <ScrollViewer Height="485" Width="885" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Left" CanContentScroll="True">
+        <ScrollViewer Height="495" Width="912" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Left" CanContentScroll="True" Margin="0">
             <ScrollViewer.Effect>
                 <DropShadowEffect/>
             </ScrollViewer.Effect>
 
-            <StackPanel x:Name="ConGrid" HorizontalAlignment="Left" Width="875" Height="491">
-            </StackPanel>
+            <StackPanel x:Name="ConGrid" HorizontalAlignment="Left" Width="875" Height="491"/>
         </ScrollViewer>
+
     </StackPanel>
 </Window>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,9 +23,18 @@ namespace webX3._0
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow() => InitializeComponent();
-
+        public static bool _active = false;
+        public static bool _online = false;
         public static ServerConsole Svcon = new ServerConsole();
+
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            Thread _DT = new Thread(new ThreadStart(DataTransit.Start));
+            _DT.SetApartmentState(ApartmentState.STA);
+            _DT.Start();
+        }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -36,9 +46,22 @@ namespace webX3._0
             Application.Current.Shutdown();
         }
 
+        private void Adminc(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
         private void Con_click(object sender, RoutedEventArgs e)
         {
-            Svcon.Show();
+            if (_active == false) {
+                Svcon.Show();
+
+                _active = true;
+            } else if (_active == true) {
+                Svcon.Hide();
+
+                _active = false;
+            }
         }
 
         private void MoveCursorMenu(int index)
@@ -67,8 +90,12 @@ namespace webX3._0
                     GridPrincipal.Children.Add(new Pages.Console());
                     break;
                 case 3:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Pages.DBManager());
                     break;
                 case 4:
+                    break;
+                case 5:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new Pages.AboutWebxlib());
                     break;

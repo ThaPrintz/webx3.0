@@ -13,9 +13,9 @@
             <Grid Height="550">
                 <Label FontFamily="Cooper Black" Foreground="#FF2C2C2C" FontSize="48" Content="Console Log Archive" VerticalAlignment="Top" HorizontalAlignment="Center"/>
 
-                <DatePicker Width="100" materialDesign:HintAssist.Hint="Pick Date" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="65,68,470,445" Foreground="#FF00A9DA" BorderBrush="#FF00A9DA" />
+                <DatePicker materialDesign:HintAssist.Hint="Search logs by date" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="25,97,470,416" Foreground="#FF3450FF" BorderBrush="#FF3450FF" />
 
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Background="{x:Null}" Height="35" Margin="25,115,0,10">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Background="{x:Null}" Height="35" Margin="25,139,0,0">
                     <Button.Foreground>
                         <RadialGradientBrush>
                             <GradientStop Color="#FFAC5CF0"/>
@@ -29,9 +29,49 @@
                         </LinearGradientBrush>
                     </Button.BorderBrush>
 
-                    <StackPanel HorizontalAlignment="Left" Height="35" Width="146">
+                    <StackPanel HorizontalAlignment="Left" Height="35" Width="146" Margin="-10,0,0,0">
                         <materialDesign:PackIcon Kind="FileUploadOutline" Height="30" Width="44" Margin="-8,-2,0,0"/>
-                        <TextBlock Text="Open log" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-15,-32,0,0" FontFamily="Leelawadee UI" Foreground="#DD597BEE" FontWeight="Bold"/>
+                        <TextBlock Text="Open log" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="36,-32,23,0" FontFamily="Leelawadee UI" Foreground="#DD597BEE" FontWeight="Bold" Width="87"/>
+                    </StackPanel>
+                </Button>
+
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Background="{x:Null}" Height="35" Margin="25,421,0,0">
+                    <Button.Foreground>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFAC5CF0"/>
+                            <GradientStop Color="#FF5D00FF" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Button.Foreground>
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFAF7EE0" Offset="0.164"/>
+                            <GradientStop Color="#FF5D00FF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+
+                    <StackPanel HorizontalAlignment="Left" Height="35" Width="146" Margin="-10,0,0,0">
+                        <materialDesign:PackIcon Kind="FolderOpen" Height="30" Width="44" Margin="-8,-2,0,0"/>
+                        <TextBlock Text="Logs directory" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="36,-32,-13,0" FontFamily="Leelawadee UI" Foreground="#DD597BEE" FontWeight="Bold" Width="123" Height="17"/>
+                    </StackPanel>
+                </Button>
+
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Background="{x:Null}" Height="35" Margin="25,461,0,0">
+                    <Button.Foreground>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFAC5CF0"/>
+                            <GradientStop Color="#FF5D00FF" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Button.Foreground>
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFAF7EE0" Offset="0.164"/>
+                            <GradientStop Color="#FF5D00FF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+
+                    <StackPanel HorizontalAlignment="Left" Height="35" Width="146" Margin="-10,0,0,0">
+                        <materialDesign:PackIcon Kind="ContentSaveOutline" Height="30" Width="44" Margin="-7,-2,0,0"/>
+                        <TextBlock Text="Dump console" FontSize="13" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="37,-32,18,0" FontFamily="Leelawadee UI" Foreground="#DD597BEE" FontWeight="Bold" Width="95"/>
                     </StackPanel>
                 </Button>
 

@@ -6,36 +6,40 @@
         xmlns:local="clr-namespace:webX3._0"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="612" Width="1024" WindowStyle="None" Icon="ww.png">
-    <Window.ContextMenu>
-        <ContextMenu />
-    </Window.ContextMenu>
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="612" Width="1024" WindowStyle="None" Icon="ww.png" Title="webX3.0 User Interface">
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo Overlay="ww.png"/>
+    </Window.TaskbarItemInfo>
+
+    <Window.Effect>
+        <DropShadowEffect/>
+    </Window.Effect>
     <Grid Height="612" Width="1024" Background="#FFEEEEEE" MouseDown="Grid_MouseDown" HorizontalAlignment="Left">
         <StackPanel VerticalAlignment="Top">
-            <Grid Background="#FF00A9DA" Height="15"/>
-
-            <Grid Margin="5">
+            <Grid Background="#FF00A9DA" Height="20">
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0,-8,0,0">
-                        <materialDesign:PackIcon Kind="Discord"/>
+                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Black" Margin="0,-5,0,0">
+                        <materialDesign:PackIcon Kind="Discord" Width="20" Height="20"/>
                     </Button>
 
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0,-8,0,0">
-                        <materialDesign:PackIcon Kind="Steam"/>
+                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Black" Margin="0,-5,0,0">
+                        <materialDesign:PackIcon Kind="Steam" Width="20" Height="20"/>
                     </Button>
 
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0,-8,0,0">
-                        <materialDesign:PackIcon Kind="Github"/>
+                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Black" Margin="0,-5,0,0">
+                        <materialDesign:PackIcon Kind="Github" Width="20" Height="20"/>
                     </Button>
 
-                    <Button x:Name="PowerButton" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="Pb_click" Margin="0,-8,0,0">
-                        <materialDesign:PackIcon Kind="Power" Foreground="#FF00FF97"/>
-                    </Button>
-
-                    <Button x:Name="Console" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="Con_click" Margin="0,-8,0,0">
-                        <materialDesign:PackIcon Height="60" Width="60" Kind="Console" Foreground="#FF444444"/>
+                    <Button x:Name="PowerButton" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Black" Click="Pb_click" Margin="0,-5,0,0">
+                        <materialDesign:PackIcon Kind="Power" Foreground="Red" Width="20" Height="20"/>
                     </Button>
                 </StackPanel>
+            </Grid>
+
+            <Grid Margin="3">
+                <Button x:Name="Console" Width="60" HorizontalAlignment="Right" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="Con_click" Margin="0,-5,0,0">
+                    <materialDesign:PackIcon Height="60" Width="60" Kind="Console" Foreground="#FF444444"/>
+                </Button>
             </Grid>
         </StackPanel>
 
@@ -45,6 +49,8 @@
 
         <Grid Width="250" HorizontalAlignment="Left" Background="#FF222222">
             <Image HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="250" Source="webx222.png" Stretch="Fill" Margin="0,10,0,0"/>
+            <Label Content="Current Administrator" Margin="16,533,18,50" FontSize="21" FontFamily="Sitka Heading" FontWeight="Bold" Foreground="#DD5AB2FB" />
+
 
             <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
                 <Grid x:Name="GridCursor" Margin="0 100 0 0" Background="#FF00A9DA" Width="10" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top"/>
@@ -81,11 +87,31 @@
 
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="FileCompare" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Admin Panel" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                    </StackPanel>
+                </ListViewItem>
+
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="About" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="About webxlib" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
             </ListView>
+
+            <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="250" Height="45" Background="#FF3C3B3B">
+                <materialDesign:Chip HorizontalAlignment="Left" Content="Tha Printz" IconBackground="#FF143761" FontFamily="Segoe UI Black" Background="#E5FFFFFF" Cursor="Arrow" Width="150" FontSize="16" Margin="7,5,0,8">
+                    <materialDesign:Chip.Effect>
+                        <DropShadowEffect ShadowDepth="3"/>
+                    </materialDesign:Chip.Effect>
+                    <materialDesign:Chip.Icon>
+                        <Image Source="user.png" />
+                    </materialDesign:Chip.Icon>
+                </materialDesign:Chip>
+
+                <materialDesign:PopupBox Margin="209,0,0,0" StaysOpen="True" IsEnabled="True"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
