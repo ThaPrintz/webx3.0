@@ -86,8 +86,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\Visual Studio Projects\webxlib;E:\APILibraries\WolfSSL;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Visual Studio Projects\webxlib\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\APIs and Libraries\webxlib\webxlib;D:\APIs and Libraries\WolfSSL;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\APIs and Libraries\webxlib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -142,7 +142,7 @@
       <PreprocessorDefinitions>WEBXCORE_EXPORTS;_UNICODE;UNICODE</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>E:\Visual Studio Projects\webxlib;E:\APILibraries\DataTransit\DataTransit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\APIs and Libraries\webxlib\webxlib;D:\APIs and Libraries\DataTransit\DataTransit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
     </ClCompile>
     <Link>
@@ -151,7 +151,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>E:\Visual Studio Projects\webxlib\Release;E:\APILibraries\DataTransit;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\APIs and Libraries\webxlib;D:\APIs and Libraries\DataTransit;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>webxlib.lib;shlwapi.lib;InternalDataTransport.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
